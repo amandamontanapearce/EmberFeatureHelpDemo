@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <h2>Student Dashboard</h2>
+  <h1>Hi {{students.name}}</h1>
+<div class="container-fluid">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Upcoming Courses</h1>
+  </div>
+<div class="panel-body">
+<table class="table table-hover table-responsive">
+  <thead>
+  <tr>
+    <th>Course</th>
+    <th>Course Dates</th>
+    <th>Course Status</th>
+    <th>Registration</th>
+    <th>Registration Status</th>
+  </tr>
+  </thead>
+<tbody>
+{{#each courses as |course|}}
+  <tr>
+    <th>{{course.name}}</th>
+    <th>
+      <ul>
+        {{#each course.courseDates as |date|}}
+          <li>{{date}}</li>
+        {{/each}}
+      </ul>
+    </th>
+  {{#if course.isAcceptingRegistrations}}
+      <th>open</th>
+      <th>
+        <a>apply here</a>
+        <small>(non-working link for demo)</small>
+      </th>
+  {{else}}
+    <th>closed</th>
+    <th>cannot apply at this time</th>
+  {{/if}}
+</tr>
+{{/each}}
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
