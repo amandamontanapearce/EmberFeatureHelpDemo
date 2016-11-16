@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <h2>Student Dashboard</h2>
-  <h1>Hi {{students.name}}</h1>
+  <h1>Hi {{currentUser.student.name}}</h1>
 <div class="container-fluid">
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -18,7 +18,7 @@
   </tr>
   </thead>
 <tbody>
-{{#each courses as |course|}}
+{{#each userCourses as |course|}}
   <tr>
     <th>{{course.name}}</th>
     <th>
@@ -34,9 +34,11 @@
         <a>apply here</a>
         <small>(non-working link for demo)</small>
       </th>
+    <th>{{course.RegistrationStatus}}</th>
   {{else}}
     <th>closed</th>
     <th>cannot apply at this time</th>
+    <th>{{course.RegistrationStatus}}</th>
   {{/if}}
 </tr>
 {{/each}}
