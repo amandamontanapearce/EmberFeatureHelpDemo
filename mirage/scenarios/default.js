@@ -4,6 +4,8 @@ export default function(server) {
   server.createList('student', numberOfStudents);
   server.createList('course', numberOfCourses);
 
+  server.create('student', {name: "me", email: "me@me.com", password: "a"})
+
   //create registrations
   server.create('registration', {courseId: 1, studentId: 1});
   server.create('registration', {courseId: 1, studentId: 2});
